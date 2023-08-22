@@ -3,6 +3,7 @@ import axios from "axios";
 import TilesRow from "../components/tilesRow/index.js";
 import Navbar from "../components/navbar/index.js";
 import Cover from "../components/cover/index.js";
+import Footer from "../components/Footer.js";
 
 function Show() {
   const [shows, setShows] = useState([]);
@@ -46,6 +47,7 @@ function Show() {
       <TilesRow movies={shows} title="Shows" />
       <TilesRow movies={comedy} title="Comedy" />
       <TilesRow movies={action} title="Action" />
+      <Footer />
     </div>
   );
 }

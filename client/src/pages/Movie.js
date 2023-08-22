@@ -3,6 +3,7 @@ import axios from "axios";
 import TilesRow from "../components/tilesRow/index.js";
 import Navbar from "../components/navbar/index.js";
 import Cover from "../components/cover/index.js";
+import Footer from "../components/Footer.js";
 
 function Movie() {
   const [movies, setMovies] = useState([]);
@@ -44,6 +45,7 @@ function Movie() {
       <TilesRow movies={movies} title="Movies" />
       <TilesRow movies={comedy} title="Comedy" />
       <TilesRow movies={action} title="Action" />
+      <Footer />
     </div>
   );
 }

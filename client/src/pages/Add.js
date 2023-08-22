@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
+import Footer from "../components/Footer";
 
 function Add() {
   const [img, setImg] = useState(null);
@@ -78,9 +79,9 @@ function Add() {
   console.log(inputs);
 
   return (
-    <>
+    <div className="container-main-page">
       <Navbar />
-      <div className="pt-20 bg-slate-700 h-screen flex flex-col-2">
+      <div className="pt-20  flex flex-col-2">
         <div className="flex flex-col w-full mt-5">
           <div className="flex flex-row gap-2">
             <label className="text-red-500 text-md mx-5 whitespace-nowrap font-extrabold">
@@ -217,7 +218,10 @@ function Add() {
           </button>
         </div>
       </div>
-    </>
+      <div>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
