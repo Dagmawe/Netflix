@@ -31,7 +31,7 @@ function Add() {
       inputs.type === "" ||
       inputs.trailer === ""
     ) {
-      return alert("Please complete all input feild");
+      return alert("Please complete form");
     }
     try {
       await axios.post("http://localhost:8800", inputs);
@@ -169,7 +169,7 @@ function Add() {
           </div>
           <div className="flex flex-row gap-2">
             <label className="text-red-500 text-md mx-5 whitespace-nowrap font-extrabold">
-              Film trailer (URL):{" "}
+              Youtube trailer (URL):{" "}
             </label>
             <input
               required

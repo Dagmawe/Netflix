@@ -12,10 +12,12 @@ function Movie() {
   const [title, setTitle] = useState();
   const [image, setImage] = useState();
   const [vid, setVid] = useState("");
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     const getMovies = async () => {
       try {
+        const search = await axios.get("http://localhost:8800/");
         const response_movies = await axios.get(
           "http://localhost:8800/type/Movie"
         );
@@ -25,6 +27,7 @@ function Movie() {
         const response_Action = await axios.get(
           "http://localhost:8800/shows-page/Action/Movie"
         );
+        setSearch(search.data);
         setAction(response_Action.data);
         setComedy(response_comedy.data);
         setMovies(response_movies.data);
@@ -40,7 +43,7 @@ function Movie() {
 
   return (
     <div className="container-main-page">
-      <Navbar />
+      <Navbar movies={search} />
       <Cover image={image} title={title} vid={vid} />
       <TilesRow movies={movies} title="Movies" />
       <TilesRow movies={comedy} title="Comedy" />

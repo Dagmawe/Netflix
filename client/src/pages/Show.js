@@ -12,10 +12,12 @@ function Show() {
   const [title, setTitle] = useState();
   const [image, setImage] = useState();
   const [vid, setVid] = useState("");
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     const getShows = async () => {
       try {
+        const search = await axios.get("http://localhost:8800/");
         const response_shows = await axios.get(
           "http://localhost:8800/type/Show"
         );
@@ -25,6 +27,7 @@ function Show() {
         const response_Action = await axios.get(
           "http://localhost:8800/shows-page/Action/Show"
         );
+        setSearch(search.data);
         setAction(response_Action.data);
         setComedy(response_comedy.data);
         setShows(response_shows.data);
@@ -37,12 +40,10 @@ function Show() {
     };
     getShows();
   }, []);
-  console.log("show", shows);
-  console.log("action", action);
-  console.log("comedy", comedy);
+
   return (
     <div className="container-main-page">
-      <Navbar />
+      <Navbar movies={search} />
       <Cover image={image} title={title} vid={vid} />
       <TilesRow movies={shows} title="Shows" />
       <TilesRow movies={comedy} title="Comedy" />

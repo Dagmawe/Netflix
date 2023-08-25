@@ -11,9 +11,6 @@ export default function TilesRow({ movies, title }) {
   const handleClick = () => {
     setHover(!hover);
   };
-  const handleOnhover = (e) => {
-    console.log(e);
-  };
   function Modal({ link }) {
     return (
       <div className="modal">
