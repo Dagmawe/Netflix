@@ -135,14 +135,14 @@ function Navbar({ movies }) {
                   value={searchInput}
                   type="search"
                   className=" mx-2 block w-max  flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-white outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600  dark:placeholder:text-neutral-200 dark:focus:border-primary"
-                  placeholder="Search Title, Genre..."
+                  placeholder="Search Title"
                   aria-label="Search"
                   aria-describedby="button-addon2"
                 />
               </div>
               <div>
                 {filter.length > 0 ? (
-                  <div className="absolute w-max h-auto overflow-hidden p-6 mt-5 bg-transparent border rounded-lg">
+                  <div className="absolute w-max h-auto overflow-hidden p-6 mt-5 bg-slate-800 border rounded-lg">
                     {filter.map((movie) => {
                       return (
                         <div
@@ -177,7 +177,7 @@ function Navbar({ movies }) {
                     })}
                   </div>
                 ) : (
-                  <div className="absolute w-max h-25 overflow-hidden p-6 mt-5 bg-transparent border rounded-lg">
+                  <div className="absolute bg-slate-800 w-max h-25 overflow-hidden p-6 mt-5 bg-transparent border rounded-lg">
                     No results
                   </div>
                 )}
@@ -206,18 +206,7 @@ function Navbar({ movies }) {
           )}
         </div>
         <h5 style={{ paddingLeft: 16, color: "#fff" }}>
-          <Link to="/add">
-            <svg
-              data-name="Layer 1"
-              id="Layer_1"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title />
-              <path d="M23.33,6.67v-2A2.67,2.67,0,0,0,20.67,2h-16A2.68,2.68,0,0,0,2,4.67v16a2.67,2.67,0,0,0,2.67,2.66h2V10.67a4,4,0,0,1,4-4Z" />
-              <path d="M28,8.67H10.67a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10.67A2,2,0,0,0,28,8.67ZM24.67,20.33H20.33v4.34a1,1,0,0,1-2,0V20.33H14a1,1,0,0,1-1-1,1,1,0,0,1,.1-.43l.47-.47a1,1,0,0,1,.43-.1h4.33V14a1,1,0,0,1,.1-.43l.47-.47a1,1,0,0,1,.43-.1,1,1,0,0,1,1,1v4.33h4.34a1,1,0,0,1,0,2Z" />
-            </svg>
-          </Link>
+          <Link to="/add">Add</Link>
         </h5>
         <div style={{ color: "#fff", fontSize: 20, paddingLeft: 16 }}>
           <i className="fa fa-bell"></i>
