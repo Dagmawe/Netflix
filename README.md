@@ -1,3 +1,4 @@
+** have not deployed the application yet so none of movies and shows will render at this time **
 # Netflix Clone
 
 - How to start app: (in client directory) - "npm i" & "npm start"
